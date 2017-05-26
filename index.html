@@ -45,16 +45,6 @@ function create() {
   ledge = platforms.create(-150, 250, 'ground');
   ledge.body.immovable = true;
 
-  ledge = platforms.create(32,0, 'ground');
-  ledge.scale.setTo( game.world.height / 400, 1);
-  ledge.angle = 90;
-  ledge.body.immovable = true;
-
-  ledge = platforms.create(800,0, 'ground');
-  ledge.scale.setTo( game.world.height / 400, 1);
-  ledge.angle = 90;
-  ledge.body.immovable = true;
-  
   player = game.add.sprite(32, game.world.height - 150 , 'dude');
   game.physics.arcade.enable(player);
   player.body.bounce.y = 0.2;
@@ -70,10 +60,7 @@ function create() {
   {
     var star = stars.create( i * 70, 0, 'star');
     star.body.gravity.y = 300;
-    star.body.bounce.y = 1; //0.7 + Math.random() * 0.2;
-    star.body.collideWorldBounds = true;
-    star.body.bounce.x = 1;
-    star.body.velocity.x = 50;
+    star.body.bounce.y = 1.0; //0.7 + Math.random() * 0.2;
   }
 
   cursors = game.input.keyboard.createCursorKeys();
